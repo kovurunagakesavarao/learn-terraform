@@ -1,0 +1,27 @@
+# Local .terraform directories (contains provider binaries and plugins)
+**/.terraform/*
+
+# .tfstate files (contains plain-text secrets and infrastructure state)
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Exclude all variable files as they often contain sensitive data/credentials
+*.tfvars
+*.tfvars.json
+
+# Exclude override files as they are usually used for local adjustments
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Include override files you explicitly want to track (optional negation example)
+# !example_override.tf
+
+# Include microcode/plugin cache directories
+.terraform.rc
+terraform.rc
