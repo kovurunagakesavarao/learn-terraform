@@ -14,7 +14,7 @@
     - name: find files in usr share nginx html
       find:
         path: /usr/share/nginx/html/
-        recursive: yes
+        recurse: yes
         hidden: yes
         file_type: any
       register: html_content
