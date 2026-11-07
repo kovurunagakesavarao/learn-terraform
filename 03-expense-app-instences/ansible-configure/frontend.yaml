@@ -1,0 +1,8 @@
+- name: configure Front end nginx server
+  hosts: frontend
+  become: yes
+  tasks:
+    - name: install nginx
+      dnf:
+        name: nginx
+        state: present 
