@@ -1,0 +1,7 @@
+- name: test local
+  host: local
+  connection: local
+  tasks:
+    - name: print message 
+      debug:
+        msg: "test"
