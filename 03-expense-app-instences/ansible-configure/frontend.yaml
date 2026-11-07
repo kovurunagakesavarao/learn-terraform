@@ -16,7 +16,7 @@
         path: /usr/share/nginx/html/
         recursive: true
         hidden: true
-        file-type: any
+        file_type: any
       register: html_content
     - name: print
       debug:
