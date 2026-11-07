@@ -10,7 +10,7 @@
       service:
         name: nginx
         state: started
-        enable: yes
+        enabled: yes
     - name: find files in usr share nginx html
       find:
         path: /usr/share/nginx/html/
