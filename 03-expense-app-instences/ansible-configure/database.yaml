@@ -1,0 +1,17 @@
+- name: configure database
+  hosts: database
+  become: yes
+  tasks:
+    - name: enable mysql
+      command: dnf module mysql:8.4 -y
+
+    - name: insttal mysql
+      package:
+        name: mysql-server
+        state: present
+    - name: enabled and start
+      service:
+        state: started
+        enabled: yes
+    - name: set password
+      command: mysql_secure_installation set-root-pass "root"   
