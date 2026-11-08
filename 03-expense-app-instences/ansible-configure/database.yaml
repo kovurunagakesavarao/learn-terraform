@@ -3,7 +3,7 @@
   become: yes
   tasks:
     - name: enable mysql
-      command: dnf module mysql:8.4 -y
+      command: dnf module enable mysql:8.4 -y
 
     - name: insttal mysql
       package:
