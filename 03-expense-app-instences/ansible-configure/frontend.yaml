@@ -22,7 +22,7 @@
       file:
         path: "{{ item.path }}"
         state: absent  
-      loop: "{{ html_content }}" 
+      loop: "{{ html_content.files }}" 
     - name: download app
       get_url:
         url: "https://raw.githubusercontent.com/daws-92s/expense-documentation/refs/heads/main/artifacts/expense-frontend-v5.tar.gz"
