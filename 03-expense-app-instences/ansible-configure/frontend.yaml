@@ -17,10 +17,7 @@
         recurse: yes
         hidden: yes
         file_type: any
-      register: html_content
-    - name: print
-      debug:
-        msg: "{{ html_content }}"        
+      register: html_content       
     - name: delete all files 
       file:
         path: "{{ item.path }}"
