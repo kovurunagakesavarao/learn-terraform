@@ -20,4 +20,26 @@
       register: html_content
     - name: print
       debug:
-        msg: "{{ html_content }}"                 
+        msg: "{{ html_content }}"        
+    - name: delete all files 
+      file:
+        path: "{{ item.path }}"
+        state: absent  
+      loop: "{{ html_content }}" 
+    - name: download app
+      get_url:
+        url: "https://raw.githubusercontent.com/daws-92s/expense-documentation/refs/heads/main/artifacts/expense-frontend-v5.tar.gz"
+        dest: /tmp/frontend.zip
+    - name: unzip file
+      unarchive:
+        src: /tmp/frontend.zip
+        dest: /usr/share/nginx/html/
+        remote_src: yes
+    - name: copy configure
+      template: 
+        src: frontend.conf
+        dest: /etc/nginx/default.d/frontend.conf
+    - name: restart 
+      service:
+        name: nginx
+        state: restarted    

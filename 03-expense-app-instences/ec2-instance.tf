@@ -29,7 +29,7 @@ resource "aws_instance" "database" {
     instance_type= var.type
     vpc_security_group_ids = ["sg-05be28f2ff609cc5c"]
      tags= {
-        Name: "database"
+        Name: "Database"
     }
 }
 
@@ -38,7 +38,7 @@ resource "aws_instance" "ansible" {
     instance_type= var.type
     vpc_security_group_ids = ["sg-05be28f2ff609cc5c"]
      tags= {
-        Name: "ansible"
+        Name: "Ansible"
     }
 }
 
