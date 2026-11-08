@@ -11,6 +11,7 @@
         state: present
     - name: enabled and start
       service:
+        name: mysqld
         state: started
         enabled: yes
     - name: set password
