@@ -12,7 +12,7 @@
         state: present
     - name: create system user
       user: 
-        name: expose
+        name: user
         create_home: false
         home: /app
         system: true
