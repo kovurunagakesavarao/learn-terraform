@@ -1,5 +1,5 @@
 - name: configure user service
-  hosts: database
+  hosts: backend
   become: yes
   tasks:
     - name: disable defult node js
