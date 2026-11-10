@@ -1,0 +1,9 @@
+- name: configure user service
+  hosts: database
+  become: yes
+  tasks:
+    - name: disable defult node js
+      command: dnf module disable nodejs -y
+    - name: enable node js 24
+      command: dnf module enable nodejs:24 -y
+        
