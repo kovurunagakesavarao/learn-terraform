@@ -12,7 +12,7 @@
         state: present
     - name: create system user
       user: 
-        name: user
+        name: expense
         create_home: false
         home: /app
         system: true
@@ -51,7 +51,7 @@
         daemon-reload: true
     - name: start and enable user
       service:
-        name: user
+        name: expense
         state: restarted
         enabled: yes    
 
