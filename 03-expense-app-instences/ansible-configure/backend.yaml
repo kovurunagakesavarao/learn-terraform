@@ -6,4 +6,16 @@
       command: dnf module disable nodejs -y
     - name: enable node js 24
       command: dnf module enable nodejs:24 -y
+    - name: install node js
+      dnf:
+        name: nodejs
+        state: present
+    - name: create system user
+      user: 
+        name: expose
+        create_home: false
+        home: /app
+        system: true
+        shell: /sbin/nologin
         
+
