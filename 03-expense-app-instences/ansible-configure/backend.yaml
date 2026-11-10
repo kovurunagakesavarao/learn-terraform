@@ -17,5 +17,28 @@
         home: /app
         system: true
         shell: /sbin/nologin
-        
+    - name: remove existing app
+      file:
+        path: /app
+        state: absent
+    - name: remove zip file
+      file: 
+        path: /tmp/backend.tar.gz
+        state: absent
+    - name: create directory
+      file: 
+        path: /app
+        state: directory
+    - name: download zip
+      get_url:
+        url: "https://raw.githubusercontent.com/daws-92s/expense-documentation/refs/heads/main/artifacts/expense-backend-v5.tar.gz"
+        dest: /tmp/backend.tar.gz
+    - name: unzip
+      unarchive:
+        src: /tmp/backend.tar.gz
+        dest: /app
+        remote_src: yes
+
+
+
 
