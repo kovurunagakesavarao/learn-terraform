@@ -46,6 +46,21 @@
       template: 
         src: user.service.j2
         dest: /etc/systemd/system/expense.service
+
+    - name: install mysql client
+      ansible.builtin.dnf:
+        name: mysql
+        state: present
+
+    - name: load backend schema into mysql
+      community.mysql.mysql_db:
+        name: all
+        state: import
+        target: /app/schema/backend.sql
+        login_host: <MYSQL-SERVER-IPADDRESS>
+        login_user: root
+        login_password: root
+
     - name: daemon reload
       systemd:
         daemon-reload: true
