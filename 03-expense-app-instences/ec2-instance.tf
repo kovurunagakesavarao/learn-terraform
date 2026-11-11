@@ -9,8 +9,6 @@ resource "aws_instance" "frontend" {
     }
 }
 
-
-
 resource "aws_instance" "backend" {
     ami= var.ami
     instance_type= var.type
@@ -20,9 +18,6 @@ resource "aws_instance" "backend" {
         Name: "Backend"
     }
 }
-
-
-
 
 resource "aws_instance" "database" {
     ami= var.ami
