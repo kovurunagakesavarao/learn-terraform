@@ -59,7 +59,7 @@
         name: all
         state: import
         target: /app/schema/backend.sql
-        login_host: 54.204.242.113
+        login_host: 3.208.23.176
         login_user: root
         login_password: root
 
